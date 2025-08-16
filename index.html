@@ -20,41 +20,48 @@
       display: flex;
       flex-direction: column;
       width: 100vw;
-      height: 100vh; /* ocupar a tela inteira */
+      height: 100vh;
       overflow: hidden;
     }
 
     .linha-links {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: center;
       flex-wrap: wrap;
-      background-color: #003366;
       flex: 1;
     }
 
-    .linha-links a {
+    .link-bloco {
       flex: 1;
-      min-width: 120px;
+      min-width: 140px;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      position: relative;
       text-align: center;
-      padding: 20px;
       color: white;
       font-weight: bold;
       text-decoration: none;
-      border-right: 1px solid #ffffff33;
-      transition: background-color 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid black;
+      transition: transform 0.3s ease;
     }
 
-    .linha-links a:last-child {
-      border-right: none;
+    .link-bloco:hover {
+      transform: scale(1.02);
     }
 
-    .linha-links a:hover {
-      background-color: #0055aa;
+    .link-bloco span {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 15px;
+      border-radius: 6px;
     }
 
     .bloco-central {
       display: flex;
-      flex: 3; /* ocupa a maior parte da tela */
+      flex: 3;
       width: 100%;
     }
 
@@ -63,6 +70,7 @@
       background-image: url('https://images.unsplash.com/photo-1714594923299-e915b7d71701?fm=jpg&q=80&w=1200');
       background-size: cover;
       background-position: center;
+      border: 2px solid black;
     }
 
     .texto-quadrado {
@@ -72,6 +80,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      border: 2px solid black;
     }
 
     .texto-quadrado h1 {
@@ -83,7 +92,7 @@
 
     @media (max-width: 768px) {
       .capa {
-        height: auto; /* deixa rolar vertical no celular */
+        height: auto;
       }
 
       .bloco-central {
@@ -101,9 +110,13 @@
         font-size: 1.8em;
       }
 
-      .linha-links a {
-        padding: 15px;
-        font-size: 0.9em;
+      .linha-links {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .link-bloco {
+        height: 100px;
       }
     }
   </style>
@@ -114,10 +127,18 @@
 
     <!-- Links Acima -->
     <div class="linha-links">
-      <a href="#introducao">Introdução</a>
-      <a href="#lingua">Língua Falada</a>
-      <a href="#pontos">Pontos Turísticos</a>
-      <a href="#comidas">Comidas Típicas</a>
+      <a href="#introducao" class="link-bloco" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Mapa_de_Venezuela_con_estados.svg/1200px-Mapa_de_Venezuela_con_estados.svg.png');">
+        <span>Introdução</span>
+      </a>
+      <a href="#lingua" class="link-bloco" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Escudo_de_Venezuela.svg/1200px-Escudo_de_Venezuela.svg.png');">
+        <span>Língua Falada</span>
+      </a>
+      <a href="#pontos" class="link-bloco" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0e/Salto_Angel_1.jpg');">
+        <span>Pontos Turísticos</span>
+      </a>
+      <a href="#comidas" class="link-bloco" style="background-image: url('https://www.saborvenezolano.com/wp-content/uploads/2020/07/arepa-venezolana.jpg');">
+        <span>Comidas Típicas</span>
+      </a>
     </div>
 
     <!-- Bloco Central -->
@@ -130,11 +151,21 @@
 
     <!-- Links Abaixo -->
     <div class="linha-links">
-      <a href="#musica">Música e Dança</a>
-      <a href="#festas">Festas Típicas</a>
-      <a href="#arte">Arte</a>
-      <a href="#religiao">Religião</a>
-      <a href="#curiosidades">Curiosidades</a>
+      <a href="#musica" class="link-bloco" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9a/Cuatro_venezolano.jpg');">
+        <span>Música e Dança</span>
+      </a>
+      <a href="#festas" class="link-bloco" style="background-image: url('https://venezuelatuya.com/tradiciones/images/tamadaba.jpg');">
+        <span>Festas Típicas</span>
+      </a>
+      <a href="#arte" class="link-bloco" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/2c/Venezuela_-_Art.jpg');">
+        <span>Arte</span>
+      </a>
+      <a href="#religiao" class="link-bloco" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d1/Bas%C3%ADlica_de_Santa_Teresa_-_Caracas%2C_Venezuela.jpg');">
+        <span>Religião</span>
+      </a>
+      <a href="#curiosidades" class="link-bloco" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7c/M%C3%A9rida%2C_Venezuela.jpg');">
+        <span>Curiosidades</span>
+      </a>
     </div>
 
   </section>
