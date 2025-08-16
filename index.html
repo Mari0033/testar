@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conhecendo a Venezuela</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .capa {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .linha-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 10px 0;
+      gap: 10px;
+    }
+
+    .linha-links a {
+      background-color: #003366;
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .linha-links a:hover {
+      background-color: #0055aa;
+    }
+
+    .bloco-central {
+      display: flex;
+      width: 90%;
+      max-width: 1200px;
+      height: 400px;
+      margin: 20px 0;
+    }
+
+    .imagem-retangulo {
+      flex: 3;
+      background-image: url('https://images.unsplash.com/photo-1714594923299-e915b7d71701?fm=jpg&q=80&w=1200');
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px 0 0 12px;
+    }
+
+    .texto-quadrado {
+      flex: 1;
+      background-color: #FFCC00;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .texto-quadrado h1 {
+      font-size: 2.2em;
+      color: #003366;
+      padding: 20px;
+      line-height: 1.2;
+    }
+
+    @media (max-width: 768px) {
+      .bloco-central {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .imagem-retangulo, .texto-quadrado {
+        width: 100%;
+        border-radius: 12px;
+        height: 250px;
+      }
+
+      .texto-quadrado {
+        border-radius: 0 0 12px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="capa">
+    
+    <!-- Links Acima -->
+    <div class="linha-links">
+      <a href="#introducao">Introdução</a>
+      <a href="#lingua">Língua Falada</a>
+      <a href="#pontos">Pontos Turísticos</a>
+      <a href="#comidas">Comidas Típicas</a>
+    </div>
+
+    <!-- Bloco Central -->
+    <div class="bloco-central">
+      <div class="imagem-retangulo"></div>
+      <div class="texto-quadrado">
+        <h1>Conhecendo<br> a Venezuela</h1>
+      </div>
+    </div>
+
+    <!-- Links Abaixo -->
+    <div class="linha-links">
+      <a href="#musica">Música e Dança</a>
+      <a href="#festas">Festas Típicas</a>
+      <a href="#arte">Arte</a>
+      <a href="#religiao">Religião</a>
+      <a href="#curiosidades">Curiosidades</a>
+    </div>
+
+  </section>
+
+</body>
+</html>
