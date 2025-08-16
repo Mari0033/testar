@@ -14,32 +14,36 @@
     body, html {
       height: 100%;
       font-family: 'Arial', sans-serif;
-      background-color: #f4f4f4;
     }
 
     .capa {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
+      width: 100vw;
+      overflow: hidden;
     }
 
     .linha-links {
       display: flex;
-      justify-content: center;
+      justify-content: space-evenly;
       flex-wrap: wrap;
-      margin: 10px 0;
-      gap: 10px;
+      background-color: #003366;
     }
 
     .linha-links a {
-      background-color: #003366;
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+      padding: 20px;
       color: white;
-      padding: 15px 25px;
-      text-decoration: none;
       font-weight: bold;
-      border-radius: 8px;
+      text-decoration: none;
+      border-right: 1px solid #ffffff33;
       transition: background-color 0.3s;
+    }
+
+    .linha-links a:last-child {
+      border-right: none;
     }
 
     .linha-links a:hover {
@@ -48,10 +52,8 @@
 
     .bloco-central {
       display: flex;
-      width: 90%;
-      max-width: 1200px;
+      width: 100%;
       height: 400px;
-      margin: 20px 0;
     }
 
     .imagem-retangulo {
@@ -59,7 +61,6 @@
       background-image: url('https://images.unsplash.com/photo-1714594923299-e915b7d71701?fm=jpg&q=80&w=1200');
       background-size: cover;
       background-position: center;
-      border-radius: 12px 0 0 12px;
     }
 
     .texto-quadrado {
@@ -69,11 +70,10 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      border-radius: 0 12px 12px 0;
     }
 
     .texto-quadrado h1 {
-      font-size: 2.2em;
+      font-size: 2.4em;
       color: #003366;
       padding: 20px;
       line-height: 1.2;
@@ -87,12 +87,16 @@
 
       .imagem-retangulo, .texto-quadrado {
         width: 100%;
-        border-radius: 12px;
         height: 250px;
       }
 
-      .texto-quadrado {
-        border-radius: 0 0 12px 12px;
+      .texto-quadrado h1 {
+        font-size: 1.8em;
+      }
+
+      .linha-links a {
+        padding: 15px;
+        font-size: 0.9em;
       }
     }
   </style>
@@ -100,7 +104,7 @@
 <body>
 
   <section class="capa">
-    
+
     <!-- Links Acima -->
     <div class="linha-links">
       <a href="#introducao">Introdução</a>
@@ -113,7 +117,7 @@
     <div class="bloco-central">
       <div class="imagem-retangulo"></div>
       <div class="texto-quadrado">
-        <h1>Conhecendo<br> a Venezuela</h1>
+        <h1>Conhecendo<br>a Venezuela</h1>
       </div>
     </div>
 
