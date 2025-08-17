@@ -10,7 +10,6 @@
       padding: 0;
       box-sizing: border-box;
     }
-
     body, html {
       height: 100%;
       font-family: 'Arial', sans-serif;
@@ -24,12 +23,15 @@
       padding: 40px 20px;
     }
 
+    /* Links com borda e animação */
     .linha-links {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       margin: 10px 0;
       gap: 10px;
+      width: 100%;
+      max-width: 1200px;
     }
 
     .linha-links a {
@@ -39,19 +41,32 @@
       text-decoration: none;
       font-weight: bold;
       border-radius: 8px;
-      transition: background-color 0.3s;
+      border: 2px solid #f8c8c8; /* borda vermelho claro */
+      transition: 
+        background-color 0.3s ease, 
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 110px;
     }
 
     .linha-links a:hover {
       background-color: #0055aa;
+      box-shadow: 0 0 8px 2px rgba(248, 200, 200, 0.6);
+      transform: scale(1.05);
+      z-index: 10;
     }
 
+    /* Bloco central com borda e animação */
     .bloco-central {
       display: flex;
       width: 90%;
       max-width: 1200px;
       height: 400px;
       margin: 20px 0;
+      gap: 10px;
     }
 
     .imagem-retangulo {
@@ -60,6 +75,13 @@
       background-size: cover;
       background-position: center;
       border-radius: 12px 0 0 12px;
+      border: 2px solid #f8c8c8; /* borda vermelho claro */
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .imagem-retangulo:hover {
+      box-shadow: 0 0 15px 5px rgba(248, 200, 200, 0.7);
+      transform: scale(1.03);
+      z-index: 10;
     }
 
     .texto-quadrado {
@@ -70,29 +92,40 @@
       justify-content: center;
       text-align: center;
       border-radius: 0 12px 12px 0;
+      border: 2px solid #f8c8c8; /* borda vermelho claro */
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      padding: 10px;
+    }
+    .texto-quadrado:hover {
+      box-shadow: 0 0 15px 5px rgba(248, 200, 200, 0.7);
+      transform: scale(1.03);
+      z-index: 10;
     }
 
     .texto-quadrado h1 {
       font-size: 2.2em;
       color: #003366;
-      padding: 20px;
       line-height: 1.2;
+      user-select: none;
     }
 
+    /* Responsivo */
     @media (max-width: 768px) {
       .bloco-central {
         flex-direction: column;
         height: auto;
       }
-
       .imagem-retangulo, .texto-quadrado {
         width: 100%;
         border-radius: 12px;
         height: 250px;
       }
-
       .texto-quadrado {
         border-radius: 0 0 12px 12px;
+      }
+      .linha-links a {
+        min-width: unset;
+        flex: 1 1 100%;
       }
     }
   </style>
@@ -100,7 +133,7 @@
 <body>
 
   <section class="capa">
-    
+
     <!-- Links Acima -->
     <div class="linha-links">
       <a href="#introducao">Introdução</a>
