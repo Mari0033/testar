@@ -11,47 +11,66 @@
       box-sizing: border-box;
     }
 
-    body, html {
+    html, body {
       height: 100%;
       font-family: 'Arial', sans-serif;
-      background-color: #f4f4f4;
     }
 
     .capa {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
     }
 
     .linha-links {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      margin: 10px 0;
-      gap: 10px;
+      flex: 1;
     }
 
-    .linha-links a {
-      background-color: #003366;
+    .link-bloco {
+      flex: 1;
+      min-width: 140px;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      text-align: center;
       color: white;
-      padding: 15px 25px;
-      text-decoration: none;
       font-weight: bold;
-      border-radius: 8px;
-      transition: background-color 0.3s;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid black;
+      border-radius: 10px;
+      margin: 2px;
+      padding: 4px;
+      background-clip: padding-box;
+      box-shadow: 0 0 0 4px #f8c8c8; /* vermelho claro ao redor */
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
-    .linha-links a:hover {
-      background-color: #0055aa;
+    .link-bloco:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px 5px rgba(248, 200, 200, 0.7);
+      z-index: 10;
+    }
+
+    .link-bloco span {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 15px;
+      border-radius: 6px;
+      user-select: none;
     }
 
     .bloco-central {
       display: flex;
-      width: 90%;
-      max-width: 1200px;
-      height: 400px;
-      margin: 20px 0;
+      flex: 3;
+      width: 100%;
     }
 
     .imagem-retangulo {
@@ -59,7 +78,18 @@
       background-image: url('https://images.unsplash.com/photo-1714594923299-e915b7d71701?fm=jpg&q=80&w=1200');
       background-size: cover;
       background-position: center;
-      border-radius: 12px 0 0 12px;
+      border: 2px solid black;
+      border-radius: 10px;
+      margin: 2px;
+      padding: 4px;
+      box-shadow: 0 0 0 4px #f8c8c8;
+      transition: transform 0.4s ease;
+    }
+
+    .imagem-retangulo:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px 5px rgba(248, 200, 200, 0.7);
+      z-index: 10;
     }
 
     .texto-quadrado {
@@ -69,30 +99,48 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      border-radius: 0 12px 12px 0;
+      border: 2px solid black;
+      border-radius: 10px;
+      margin: 2px;
+      padding: 4px;
+      box-shadow: 0 0 0 4px #f8c8c8;
     }
 
     .texto-quadrado h1 {
-      font-size: 2.2em;
+      font-size: 2.4em;
       color: #003366;
       padding: 20px;
       line-height: 1.2;
+      user-select: none;
     }
 
     @media (max-width: 768px) {
+      .capa {
+        height: auto;
+      }
+
       .bloco-central {
         flex-direction: column;
         height: auto;
       }
 
-      .imagem-retangulo, .texto-quadrado {
+      .imagem-retangulo,
+      .texto-quadrado {
         width: 100%;
-        border-radius: 12px;
         height: 250px;
       }
 
-      .texto-quadrado {
-        border-radius: 0 0 12px 12px;
+      .texto-quadrado h1 {
+        font-size: 1.8em;
+      }
+
+      .linha-links {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .link-bloco {
+        height: 100px;
       }
     }
   </style>
@@ -100,30 +148,48 @@
 <body>
 
   <section class="capa">
-    
+
     <!-- Links Acima -->
     <div class="linha-links">
-      <a href="#introducao">Introdução</a>
-      <a href="#lingua">Língua Falada</a>
-      <a href="#pontos">Pontos Turísticos</a>
-      <a href="#comidas">Comidas Típicas</a>
+      <a href="#introducao" class="link-bloco" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Mapa_de_Venezuela_con_estados.svg/1200px-Mapa_de_Venezuela_con_estados.svg.png');">
+        <span>Introdução</span>
+      </a>
+      <a href="#lingua" class="link-bloco" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Escudo_de_Venezuela.svg/1200px-Escudo_de_Venezuela.svg.png');">
+        <span>Língua Falada</span>
+      </a>
+      <a href="#pontos" class="link-bloco" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0e/Salto_Angel_1.jpg');">
+        <span>Pontos Turísticos</span>
+      </a>
+      <a href="#comidas" class="link-bloco" style="background-image: url('https://www.saborvenezolano.com/wp-content/uploads/2020/07/arepa-venezolana.jpg');">
+        <span>Comidas Típicas</span>
+      </a>
     </div>
 
     <!-- Bloco Central -->
     <div class="bloco-central">
       <div class="imagem-retangulo"></div>
       <div class="texto-quadrado">
-        <h1>Conhecendo<br> a Venezuela</h1>
+        <h1>Conhecendo<br>a Venezuela</h1>
       </div>
     </div>
 
     <!-- Links Abaixo -->
     <div class="linha-links">
-      <a href="#musica">Música e Dança</a>
-      <a href="#festas">Festas Típicas</a>
-      <a href="#arte">Arte</a>
-      <a href="#religiao">Religião</a>
-      <a href="#curiosidades">Curiosidades</a>
+      <a href="#musica" class="link-bloco" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9a/Cuatro_venezolano.jpg');">
+        <span>Música e Dança</span>
+      </a>
+      <a href="#festas" class="link-bloco" style="background-image: url('https://venezuelatuya.com/tradiciones/images/tamadaba.jpg');">
+        <span>Festas Típicas</span>
+      </a>
+      <a href="#arte" class="link-bloco" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/2c/Venezuela_-_Art.jpg');">
+        <span>Arte</span>
+      </a>
+      <a href="#religiao" class="link-bloco" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d1/Bas%C3%ADlica_de_Santa_Teresa_-_Caracas%2C_Venezuela.jpg');">
+        <span>Religião</span>
+      </a>
+      <a href="#curiosidades" class="link-bloco" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7c/M%C3%A9rida%2C_Venezuela.jpg');">
+        <span>Curiosidades</span>
+      </a>
     </div>
 
   </section>
