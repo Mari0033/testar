@@ -11,58 +11,47 @@
       box-sizing: border-box;
     }
 
-    html, body {
+    body, html {
       height: 100%;
       font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
     }
 
     .capa {
       display: flex;
       flex-direction: column;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
+      align-items: center;
+      padding: 40px 20px;
     }
 
     .linha-links {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      flex: 1;
+      margin: 10px 0;
+      gap: 10px;
     }
 
-    .link-bloco {
-      flex: 1;
-      min-width: 140px;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      text-align: center;
+    .linha-links a {
+      background-color: #003366;
       color: white;
-      font-weight: bold;
+      padding: 15px 25px;
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid black;
-      transition: transform 0.3s ease;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s;
     }
 
-    .link-bloco:hover {
-      transform: scale(1.02);
-    }
-
-    .link-bloco span {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 10px 15px;
-      border-radius: 6px;
+    .linha-links a:hover {
+      background-color: #0055aa;
     }
 
     .bloco-central {
       display: flex;
-      flex: 3;
-      width: 100%;
+      width: 90%;
+      max-width: 1200px;
+      height: 400px;
+      margin: 20px 0;
     }
 
     .imagem-retangulo {
@@ -70,7 +59,7 @@
       background-image: url('https://images.unsplash.com/photo-1714594923299-e915b7d71701?fm=jpg&q=80&w=1200');
       background-size: cover;
       background-position: center;
-      border: 2px solid black;
+      border-radius: 12px 0 0 12px;
     }
 
     .texto-quadrado {
@@ -80,43 +69,30 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      border: 2px solid black;
+      border-radius: 0 12px 12px 0;
     }
 
     .texto-quadrado h1 {
-      font-size: 2.4em;
+      font-size: 2.2em;
       color: #003366;
       padding: 20px;
       line-height: 1.2;
     }
 
     @media (max-width: 768px) {
-      .capa {
-        height: auto;
-      }
-
       .bloco-central {
         flex-direction: column;
         height: auto;
       }
 
-      .imagem-retangulo,
-      .texto-quadrado {
+      .imagem-retangulo, .texto-quadrado {
         width: 100%;
+        border-radius: 12px;
         height: 250px;
       }
 
-      .texto-quadrado h1 {
-        font-size: 1.8em;
-      }
-
-      .linha-links {
-        flex-direction: column;
-        height: auto;
-      }
-
-      .link-bloco {
-        height: 100px;
+      .texto-quadrado {
+        border-radius: 0 0 12px 12px;
       }
     }
   </style>
@@ -124,48 +100,30 @@
 <body>
 
   <section class="capa">
-
+    
     <!-- Links Acima -->
     <div class="linha-links">
-      <a href="#introducao" class="link-bloco" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Flag_of_Venezuela_%28state%29.svg/800px-Flag_of_Venezuela_%28state%29.svg.png');">
-        <span>Introdução</span>
-      </a>
-      <a href="#lingua" class="link-bloco" style="background-image: url('https://www.trabalhosescolares.net/wp-content/uploads/2012/04/lingua_espanhola_trabalhos_escolares.jpg');">
-        <span>Língua Falada</span>
-      </a>
-      <a href="#pontos" class="link-bloco" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSrqw_DBHw8YHEsTxzG3lG2joFQVQYnIvN3A&s');">
-        <span>Pontos Turísticos</span>
-      </a>
-      <a href="#comidas" class="link-bloco" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHMHybD6GB9fm6xc3WEkPtPBcHUbTNJDf1wQ&s');">
-        <span>Comidas Típicas</span>
-      </a>
+      <a href="#introducao">Introdução</a>
+      <a href="#lingua">Língua Falada</a>
+      <a href="#pontos">Pontos Turísticos</a>
+      <a href="#comidas">Comidas Típicas</a>
     </div>
 
     <!-- Bloco Central -->
     <div class="bloco-central">
       <div class="imagem-retangulo"></div>
       <div class="texto-quadrado">
-        <h1>Conhecendo<br>a Venezuela</h1>
+        <h1>Conhecendo<br> a Venezuela</h1>
       </div>
     </div>
 
     <!-- Links Abaixo -->
     <div class="linha-links">
-      <a href="#musica" class="link-bloco" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9a/Cuatro_venezolano.jpg');">
-        <span>Música e Dança</span>
-      </a>
-      <a href="#festas" class="link-bloco" style="background-image: url('https://venezuelatuya.com/tradiciones/images/tamadaba.jpg');">
-        <span>Festas Típicas</span>
-      </a>
-      <a href="#arte" class="link-bloco" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/2c/Venezuela_-_Art.jpg');">
-        <span>Arte</span>
-      </a>
-      <a href="#religiao" class="link-bloco" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d1/Bas%C3%ADlica_de_Santa_Teresa_-_Caracas%2C_Venezuela.jpg');">
-        <span>Religião</span>
-      </a>
-      <a href="#curiosidades" class="link-bloco" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7c/M%C3%A9rida%2C_Venezuela.jpg');">
-        <span>Curiosidades</span>
-      </a>
+      <a href="#musica">Música e Dança</a>
+      <a href="#festas">Festas Típicas</a>
+      <a href="#arte">Arte</a>
+      <a href="#religiao">Religião</a>
+      <a href="#curiosidades">Curiosidades</a>
     </div>
 
   </section>
